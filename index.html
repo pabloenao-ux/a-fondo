@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Fondo — un podcast sobre las ideas que me mueven</title>
+  <meta name="description" content="A Fondo: conversaciones creadas con IA a partir de las lecturas, ensayos y textos que me interesan. Por Juan Pablo Henao V." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="A Fondo — un podcast sobre las ideas que me mueven" />
+  <meta property="og:description" content="Conversaciones creadas con IA a partir de las lecturas, ensayos y textos que me interesan. Por Juan Pablo Henao V." />
+  <meta property="og:image" content="assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/estilo.css" />
+</head>
+<body data-pagina="home">
+  <header class="cabecera">
+    <div class="envoltura cabecera__inner">
+      <a class="marca" href="index.html" aria-label="A Fondo — inicio">
+        <svg class="marca__logo" viewBox="0 0 72 64" role="img" aria-hidden="true">
+          <rect x="8" y="8"  width="44" height="8" rx="4" fill="#5B9BC9"/>
+          <rect x="8" y="19" width="50" height="8" rx="4" fill="#C2A878"/>
+          <rect x="8" y="30" width="46" height="8" rx="4" fill="#2A4759"/>
+          <rect x="8" y="41" width="38" height="8" rx="4" fill="#E7DDCB"/>
+          <rect x="8" y="52" width="32" height="8" rx="4" fill="#8C9296"/>
+        </svg>
+        <span class="marca__txt">
+          <span class="marca__nombre">A Fondo</span>
+          <span class="marca__sub">por Juan Pablo Henao V.</span>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="#episodios">Episodios</a>
+        <a href="#proyecto">El proyecto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero envoltura">
+      <p class="hero__kicker">Podcast · escuchado a fondo</p>
+      <h1 class="hero__titulo">A&nbsp;Fondo</h1>
+      <p class="hero__lema">Las lecturas, ensayos y textos que me mueven, conversados capa por capa. Creados con inteligencia artificial, elegidos a mano.</p>
+      <p class="hero__firma">Hace visible el valor de la cultura.</p>
+    </section>
+
+    <section class="envoltura" id="episodios">
+      <div class="controles">
+        <div class="buscador">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="busqueda" placeholder="Buscar un episodio…" aria-label="Buscar episodios por título" />
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Filtrar por temática"></div>
+      </div>
+
+      <div class="seccion-titulo">
+        <h2>Episodios</h2>
+        <span id="conteo">cargando…</span>
+      </div>
+      <div class="rejilla" id="rejilla"></div>
+    </section>
+  </main>
+
+  <footer class="pie" id="proyecto">
+    <div class="envoltura pie__inner">
+      <span class="pie__lema">Hace visible el valor de la cultura.</span>
+      <div class="pie__derecha">
+        <a class="pie__linkedin" href="https://co.linkedin.com/in/juan-pablo-henao-vallejo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.5 8.65 21 11 21 14.2V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21H9z"/></svg>
+          LinkedIn
+        </a>
+        <span class="pie__meta">A Fondo · Juan Pablo Henao V. · 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

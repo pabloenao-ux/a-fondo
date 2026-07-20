@@ -1,0 +1,15 @@
+# Dependencias (si más adelante se migra a Astro)
+node_modules/
+.astro/
+dist/
+
+# Audios: NO van en el repo — se sirven desde almacén externo (R2/B2)
+*.m4a
+*.mp3
+assets/audio/
+
+# Sistema / plataformas
+.DS_Store
+Thumbs.db
+.vercel
+.netlify
