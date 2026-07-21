@@ -32,7 +32,7 @@ function iconoPlay() {
 const publicado = (ep) => Boolean(ep.audio);
 
 async function cargarEpisodios() {
-  const res = await fetch(RUTA_DATOS);
+  const res = await fetch(RUTA_DATOS + "?v=" + Date.now());
   const data = await res.json();
   return data.sort((a, b) => a.numero - b.numero);
 }
@@ -130,7 +130,7 @@ async function renderFicha() {
   const ep = eps.find((e) => e.id === id) || eps[0];
   document.title = `${ep.titulo} — A Fondo`;
 
-  const tieneNotas = ep.porque || ep.resumen || (ep.ideas && ep.ideas.length);
+  const tieneNotas = ep.porque || ep.resumen || (ep.ideas && ep.ideas.length) || (ep.fuentes && ep.fuentes.length);
 
   $("#ficha").innerHTML = `
     <div class="ficha__col-izq">
@@ -167,6 +167,7 @@ function bloquesNotas(ep) {
   if (ep.porque) html += `<div class="bloque bloque--porque"><p class="bloque__rotulo">Por qué lo elegí</p><p class="bloque__texto">${ep.porque}</p></div>`;
   if (ep.resumen) html += `<div class="bloque"><p class="bloque__rotulo">De qué va</p><p class="bloque__texto">${ep.resumen}</p></div>`;
   if (ep.ideas && ep.ideas.length) html += `<div class="bloque"><p class="bloque__rotulo">Ideas a fondo</p><ul class="ideas">${ep.ideas.map((i) => `<li>${i}</li>`).join("")}</ul></div>`;
+  if (ep.fuentes && ep.fuentes.length) html += `<div class="bloque"><p class="bloque__rotulo">Fuentes</p><ul class="fuentes">${ep.fuentes.map((f) => `<li><a href="${f.url}" target="_blank" rel="noopener">${f.titulo}</a></li>`).join("")}</ul></div>`;
   return html;
 }
 
