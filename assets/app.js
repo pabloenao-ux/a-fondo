@@ -182,6 +182,9 @@ function avisoPrep() {
 function iniciarPlayer(ep) {
   const btn = $("#btnPlay"), barra = $("#barra"), progreso = $("#progreso"), tActual = $("#tActual");
   const audio = new Audio(ep.audio);
+  audio.preload = "metadata";
+  const tTotal = $("#tTotal");
+  audio.addEventListener("loadedmetadata", () => { if (tTotal) tTotal.textContent = mmssDesde(audio.duration); });
   const iconoPausa = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg>`;
   btn.addEventListener("click", () => {
     if (audio.paused) { audio.play(); btn.innerHTML = iconoPausa; }
