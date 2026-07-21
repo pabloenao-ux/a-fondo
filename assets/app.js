@@ -18,8 +18,7 @@ function estratosHTML(escala = 1) {
 
 function portadaHTML(ep, grande = false) {
   return `
-    <div class="portada ${grande ? "portada--grande" : ""}" data-bg="${ep.bg}">
-      ${estratosHTML(grande ? 1.15 : 0.9)}
+    <div class="portada ${grande ? "portada--grande" : ""}" data-bg="${ep.bg}" style="background-image:url('assets/img/${ep.id}.webp')">
       <span class="portada__num">A FONDO · ${numFmt(ep.numero)}</span>
       <h3 class="portada__titulo">${ep.titulo}</h3>
     </div>`;

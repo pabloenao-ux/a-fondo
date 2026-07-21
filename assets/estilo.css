@@ -109,14 +109,15 @@ a { color: inherit; text-decoration: none; }
 .enlace-limpiar { background: none; border: none; color: var(--azul-cielo); font: inherit; cursor: pointer; text-decoration: underline; }
 
 /* ---------- Portada generada (estratos) ---------- */
-.portada { position: relative; aspect-ratio: 3 / 2; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; color: var(--hueso); }
-.portada[data-bg="noche"]   { background: var(--azul-noche); }
-.portada[data-bg="grafito"] { background: var(--grafito); }
-.portada[data-bg="cielo"]   { background: #3E6E92; }
+.portada { position: relative; aspect-ratio: 3 / 2; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; color: var(--hueso); background-size: cover; background-position: center; }
+.portada[data-bg="noche"]   { background-color: var(--azul-noche); }
+.portada[data-bg="grafito"] { background-color: var(--grafito); }
+.portada[data-bg="cielo"]   { background-color: #3E6E92; }
+.portada::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(42,71,89,.9) 0%, rgba(42,71,89,.45) 30%, rgba(42,71,89,0) 60%); pointer-events: none; }
 .portada__estratos { position: absolute; top: 18px; left: 18px; display: flex; flex-direction: column; gap: 4px; opacity: .95; }
 .portada__estratos i { display: block; height: 7px; border-radius: 999px; }
-.portada__num { position: absolute; top: 18px; right: 20px; font-family: var(--mono); font-size: .74rem; letter-spacing: .06em; color: rgba(246,243,238,.72); }
-.portada__titulo { font-size: 1.4rem; font-weight: 600; line-height: 1.16; margin: 0; letter-spacing: -.01em; }
+.portada__num { position: absolute; top: 18px; right: 20px; z-index: 2; font-family: var(--mono); font-size: .74rem; letter-spacing: .06em; color: rgba(246,243,238,.9); text-shadow: 0 1px 8px rgba(42,71,89,.6); }
+.portada__titulo { position: relative; z-index: 2; font-size: 1.4rem; font-weight: 600; line-height: 1.16; margin: 0; letter-spacing: -.01em; text-shadow: 0 1px 14px rgba(42,71,89,.55); }
 .portada--grande .portada__titulo { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
 .portada--grande { border-radius: var(--radio); box-shadow: var(--sombra-alta); }
 
